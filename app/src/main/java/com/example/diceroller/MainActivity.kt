@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
-import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -13,6 +12,8 @@ class MainActivity : AppCompatActivity() {
 
         val rollButton: Button = findViewById(R.id.button)
         rollButton.setOnClickListener { rollDice() }
+
+        rollDice()
     }
 
     /**
@@ -35,6 +36,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         diceImage.setImageResource(drawableResource)
+
+        diceImage.contentDescription = diceRoll.toString()
     }
 }
 
